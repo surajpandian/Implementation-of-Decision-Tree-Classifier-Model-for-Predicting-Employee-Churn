@@ -1,5 +1,5 @@
 # Implementation-of-Decision-Tree-Classifier-Model-for-Predicting-Employee-Churn
-
+### Date:
 ## AIM:
 To write a program to implement the Decision Tree Classifier Model for Predicting Employee Churn.
 
@@ -8,45 +8,45 @@ To write a program to implement the Decision Tree Classifier Model for Predictin
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
 ## Algorithm
- 
-    step1-start
+Step 1: Start the program.
 
-    step2-Import the required libraries.
+Step 2: import pandas module and import the required data set.
 
-    step3-Upload and read the dataset.
+Step 3: Find the null values and count them.
 
-    step4-Check for any null values using the isnull() function.
+Step 4: Count number of left values.
 
-    step5-From sklearn.tree import DecisionTreeClassifier and use criterion as entropy.
+Step 5: From sklearn import LabelEncoder to convert string values to numerical values.
 
-    step6-Find the accuracy of the model and predict the required values by importing the required module from sklearn.
+Step 6: From sklearn.model_selection import train_test_split.
 
-    step7-end
+Step 7: Assign the train dataset and test dataset.
 
+Step 8: From sklearn.tree import DecisionTreeClassifier.
 
+Step 9: Use criteria as entropy.
+
+Step 10: From sklearn import metrics.
+
+Step 11: Find the accuracy of our model and predict the require values.
+
+Step 12: Stop the program.
 ## Program:
-
+```
 /*
 Program to implement the Decision Tree Classifier Model for Predicting Employee Churn.
-
-
 Developed by: R suraj pandian
-
-
 RegisterNumber:  212223080040
-*/
-```python
 
 import pandas as pd
-data=pd.read_csv("/content/Employee.csv")
+data=pd.read_csv("Exp_8_Employee.csv")
 
-print('data.info:')
+data.head()
+
 data.info()
 
-print('data.isnull().sum():')
 data.isnull().sum()
 
-print('value_count: ')
 data["left"].value_counts()
 
 from sklearn.preprocessing import LabelEncoder
@@ -55,8 +55,8 @@ le=LabelEncoder()
 data["salary"]=le.fit_transform(data["salary"])
 data.head()
 
-*x=data[["satisfaction_level","last_evaluation","number_project","average_montly_hours","time_spend_company","Work_accident","promotion_last_5years","salary"]]
-x.head()**
+x=data[["satisfaction_level","last_evaluation","number_project","average_montly_hours","time_spend_company","Work_accident","promotion_last_5years","salary"]]
+x.head()
 
 y=data["left"]
 
@@ -74,24 +74,16 @@ accuracy
 
 dt.predict([[0.5,0.8,9,260,6,0,1,2]])
 
+*/
 ```
 
 ## Output:
 
-![alt text](22.png)
+### Accuracy:
+![81](https://github.com/user-attachments/assets/53019527-0efb-41bf-b4cd-c24a8bbe30c8)
 
-![alt text](33.png)
-
-![alt text](44.png)
-
-![alt text](55.png)
-
-![alt text](66.png)
-
-![alt text](77.png)
-
-
-
+### Predict:
+![82](https://github.com/user-attachments/assets/e69e5bcf-9871-439b-bfff-5be0a7aaa2fa)
 
 
 ## Result:
